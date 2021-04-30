@@ -83,6 +83,21 @@ public class FileManager {
     }
 
     /**
+     * Saves and refresh the file cache
+     */
+    public void reload() {
+        try {
+            config.save(this.file);
+            config = null;
+            this.config = (FileConfiguration) YamlConfiguration.loadConfiguration(this.file);
+
+        }
+        catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    /**
      * Get the file value
      * @return java.io.File
      */
