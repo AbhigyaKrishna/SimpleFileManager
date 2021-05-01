@@ -1,8 +1,8 @@
-package abhigya.needop.util.Configuration;
+package simpleyamlfilemanager;
 
-import abhigya.needop.Main;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
+import simpleyamlfilemanager.Main;
 
 import java.io.File;
 import java.io.IOException;
@@ -21,6 +21,22 @@ public class FileManager {
      * @param path     Path of the file with proper '/'
      */
     public FileManager(String filename, String path) {
+        if (path != null) {
+
+            for (String p : path.split("/")) {
+                p = p.replaceAll("/", "");
+
+                File folder = new File(datafolder, p);
+
+                if (!folder.exists()) {
+                    folder.mkdir();
+                }
+            }
+        }
+        else {
+            path = "";
+        }
+
         this.file = new File(datafolder, path + filename + ".yml");
         this.config = (FileConfiguration) YamlConfiguration.loadConfiguration(this.file);
 
