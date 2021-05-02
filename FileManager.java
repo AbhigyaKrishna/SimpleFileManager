@@ -23,8 +23,13 @@ public class FileManager {
     public FileManager(String filename, String path) {
         if (path != null) {
 
-            for (String p : path.split("/")) {
-                p = p.replaceAll("/", "");
+            String[] paths = path.split("/");
+            for (int i = 0; i < path.length(); i++) {
+                String p;
+                if (i == 0)
+                    p = paths[i].replaceAll("/", "").trim();
+                else
+                    p = paths[i - 1].replaceAll("/", "").trim() + paths[i].replaceAll("/", "").trim();
 
                 File folder = new File(datafolder, p);
 
