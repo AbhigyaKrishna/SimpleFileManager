@@ -1,6 +1,6 @@
-package abhigya.needop.Utils.Configuration;
+package simpleyamlfilemanager.bungee;
 
-import abhigya.needop.Main;
+import simpleyamlfilemanager.bungee.Main;
 import net.md_5.bungee.config.Configuration;
 import net.md_5.bungee.config.ConfigurationProvider;
 import net.md_5.bungee.config.YamlConfiguration;

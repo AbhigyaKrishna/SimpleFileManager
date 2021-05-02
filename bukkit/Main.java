@@ -1,4 +1,4 @@
-package simpleyamlfilemanager;
+package simpleyamlfilemanager.bukkit;
 
 import org.bukkit.plugin.java.JavaPlugin;
 import simpleyamlfilemanager.FileManager;
@@ -16,7 +16,7 @@ public class Main extends JavaPlugin{
         }
 
         //Test file
-        FileManager config = new FileManager("configuration", null);
+        FileManager config = new FileManager("configuration", null, false);
         config.addHeader("Test");
         config.addDefault("test", "abc");
         config.saveDefaults();

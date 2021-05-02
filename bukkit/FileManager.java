@@ -1,8 +1,8 @@
-package simpleyamlfilemanager;
+package simpleyamlfilemanager.bukkit;
 
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
-import simpleyamlfilemanager.Main;
+import simpleyamlfilemanager.bungee.Main;
 
 import java.io.File;
 import java.io.IOException;
