@@ -51,12 +51,8 @@ public class FileManager {
         }
 
         this.name = filename;
-        try {
-            this.file = new File(datafolder, path + filename + ".yml");
-            this.config = provider.load(this.file);
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
+        
+        this.file = new File(datafolder, path + filename + ".yml");
 
         if (!file.exists()) {
             try {
@@ -70,6 +66,12 @@ public class FileManager {
             catch (Exception ex) {
                 ex.printStackTrace();
             }
+        }
+
+        try {
+            this.config = provider.load(this.file);
+        } catch (IOException ex) {
+            ex.printStackTrace();
         }
     }
 
