@@ -27,24 +27,10 @@ public class FileManager {
      */
     public FileManager(String filename, String path, boolean saveFromResource) {
         if (path != null) {
+            File pathFile = new File(datafolder, path);
 
-            String[] paths = path.split("/");
-            for (int i = 0; i < paths.length; i++) {
-                String p;
-
-                if (i == 0) {
-                    p = paths[i].replaceAll("/", "").trim();
-                }
-                else {
-                    p = paths[i - 1].replaceAll("/", "").trim() + "/" + paths[i].replaceAll("/", "").trim();
-                }
-
-                File folder = new File(datafolder, p);
-
-                if (!folder.exists()) {
-                    folder.mkdirs();
-                }
-            }
+            if (!pathFile.isDirectory())
+                pathFile.mkdirs();
         }
         else {
             path = "";
